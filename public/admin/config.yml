@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master        # use 'main' if your repo uses main
+
+media_folder: "public/uploads"   # where files are stored in the repo
+public_folder: "/uploads"        # how they’re served on the site
+
+publish_mode: editorial_workflow
+
+# Start simple: edit a JSON file (we'll add targeted fields later)
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - label: "Site Settings"
+        name: "settings"
+        file: "src/data/site.json"
+        fields:
+          - { label: "Data", name: "raw", widget: "json" }
